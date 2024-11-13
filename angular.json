@@ -37,7 +37,7 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
-            "baseHref": "https://eleazarmgil.github.io/web-bluetooth-api/",
+            "baseHref": "/web-bluetooth-api/",
             "ssr": {
               "entry": "server.ts"
             }
