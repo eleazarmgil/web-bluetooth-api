@@ -3,12 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   standalone:true,
-  template: `
-    <h1>Enviar Datos por Bluetooth</h1>
-    <button (click)="connectToBluetooth()">Conectar a Bluetooth</button>
-    <button (click)="sendData()" [disabled]="!connected">Enviar Datos</button>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   private device: Bluetooth.BluetoothDevice | null = null;
@@ -18,7 +14,7 @@ export class AppComponent {
   async connectToBluetooth() {
     try {
       this.device = await navigator.bluetooth.requestDevice({
-        filters: [{ services: ['0188bd52-596a-45de-b156-e6fda98dddc9'] }] // Reemplazar con tu UUID de servicio
+       acceptAllDevices:true // Reemplazar con tu UUID de servicio
       });
 
       if (!this.device) {
