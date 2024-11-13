@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   async connectToBluetooth() {
     try {
       this.device = await navigator.bluetooth.requestDevice({
-        acceptAllDevices: true, // Reemplazar con tu UUID de servicio
+        filters: [{ services: ['9becbe48-4c5a-46eb-8392-dd69b39fab16'] }] // UUID del servicio SPP
       });
 
       if (!this.device) {
@@ -30,10 +30,8 @@ export class AppComponent implements AfterViewInit {
         return;
       }
 
-      const service = await server.getPrimaryService('your_service_uuid'); // Reemplazar con UUID de servicio
-      this.characteristic = await service.getCharacteristic(
-        'your_characteristic_uuid'
-      ); // Reemplazar con UUID de característica
+      const service = await server.getPrimaryService('9becbe48-4c5a-46eb-8392-dd69b39fab16'); // Servicio SPP
+      this.characteristic = await service.getCharacteristic('c3b8bd3d-9925-42ed-be3a-d1eda8be3de5'); // Característica
       this.connected = true;
       console.log('Conectado a', this.device.name);
     } catch (error) {
