@@ -41,6 +41,14 @@ body {
   }
 }
 
+.logo{
+  display: flex;
+  justify-content: center;
+}
+svg{
+  width: 40%;
+  height: 15vh;
+}
 .info-container {
   margin-top: 20px; /* Espaciado superior para separar del controlador */
   text-align: center; /* Centrar el texto */
