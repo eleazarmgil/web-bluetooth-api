@@ -1,17 +1,13 @@
 <div class="main-container">
   <div class="connection-container">
     <button (click)="connectToBluetooth()">Conectar a Bluetooth</button>
-    <button (click)="sendData()" [disabled]="!connected">Enviar Datos</button>
   </div>
   <div class="controller">
-    <button class="button up">↑</button>
+    <button class="button up" (click)="sendData('arriba')" >↑</button>
     <div class="horizontal-buttons">
-      <button class="button left">←</button>
-      <button class="button right">→</button>
+      <button class="button left" (click)="sendData('izquierda')">←</button>
+      <button class="button right" (click)="sendData('derecha')">→</button>
     </div>
-    <button class="button down">↓</button>
-  </div>
-  <div class="info-container">
-    <p>Ingenieria Informatica</p>
+    <button class="button down" (click)="sendData('abajo')">↓</button>
   </div>
 </div>
