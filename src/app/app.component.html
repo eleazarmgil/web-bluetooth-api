@@ -1,12 +1,17 @@
-<h1>Enviar Datos por Bluetooth</h1>
+<div class="main-container">
+  <div class="connection-container">
     <button (click)="connectToBluetooth()">Conectar a Bluetooth</button>
     <button (click)="sendData()" [disabled]="!connected">Enviar Datos</button>
-
-    <div class="controller">
-        <button class="button up">↑</button>
-        <div class="horizontal-buttons">
-            <button class="button left">←</button>
-            <button class="button right">→</button>
-        </div>
-        <button class="button down">↓</button>
+  </div>
+  <div class="controller">
+    <button class="button up">↑</button>
+    <div class="horizontal-buttons">
+      <button class="button left">←</button>
+      <button class="button right">→</button>
     </div>
+    <button class="button down">↓</button>
+  </div>
+  <div class="info-container">
+    <p>Ingenieria Informatica</p>
+  </div>
+</div>

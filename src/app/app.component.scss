@@ -7,47 +7,89 @@ body {
   margin: 0;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.connection-container {
+  margin-bottom: 20px;
+
+  button {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
 .controller {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%; /* Usar el 100% de la altura disponible */
   position: relative;
 
   .horizontal-buttons {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
   }
 
   .button {
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      border: none;
-      border-radius: 10px;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
+    width: 15vw; /* Ajustando el ancho a un porcentaje del viewport */
+    height: 15vw; /* Ajustando la altura al mismo porcentaje */
+    max-width: 100px; /* Limitar el ancho máximo */
+    max-height: 100px; /* Limitar la altura máxima */
+    font-size: 5vw; /* Ajustando el tamaño de fuente según el viewport */
+    border: none;
+    border-radius: 50%; /* Haciendo los botones circulares */
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px; /* Espaciado entre botones */
 
-      &:hover {
-          background-color: #0056b3;
-      }
+    &:hover {
+      background-color: #0056b3;
+    }
 
-      &.up {
-          margin-bottom: 10px;
-      }
+    &.up {
+      margin-bottom: 20px; /* Espaciado adicional para el botón de arriba */
+    }
 
-      &.down {
-          margin-top: 10px;
-      }
+    &.down {
+      margin-top: 20px; /* Espaciado adicional para el botón de abajo */
+    }
 
-      &.left {
-          margin-right: 10px;
-      }
+    &.left {
+      margin-right: 20px; /* Espaciado adicional para el botón de izquierda */
+    }
 
-      &.right {
-          margin-left: 10px;
-      }
+    &.right {
+      margin-left: 20px; /* Espaciado adicional para el botón de derecha */
+    }
   }
+}
+
+.info-container {
+  margin-top: 20px; /* Espaciado superior para separar del controlador */
+  text-align: center; /* Centrar el texto */
+  font-size: 24px; /* Tamaño de fuente para el texto de información */
+  color: #333; /* Color del texto */
 }
