@@ -18,7 +18,7 @@ export class AppComponent {
   async connectToBluetooth() {
     try {
       this.device = await navigator.bluetooth.requestDevice({
-        filters: [{ services: ['your_service_uuid'] }] // Reemplazar con tu UUID de servicio
+        filters: [{ services: ['0188bd52-596a-45de-b156-e6fda98dddc9'] }] // Reemplazar con tu UUID de servicio
       });
 
       if (!this.device) {
