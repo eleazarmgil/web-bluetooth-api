@@ -41,9 +41,9 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  async sendData() {
+  async sendData(message:string) {
     if (this.characteristic) {
-      const data = new TextEncoder().encode('Tu mensaje'); // Cambiar mensaje
+      const data = new TextEncoder().encode(message); // Cambiar mensaje
       await this.characteristic.writeValue(data);
       console.log('Datos enviados');
     } else {

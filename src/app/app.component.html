@@ -4,22 +4,13 @@
   </div>
   <div class="connection-container">
     <button (click)="connectToBluetooth()">Conectar a Bluetooth</button>
-    <button (click)="sendData()" [disabled]="!connected">Enviar Datos</button>
   </div>
-  <!-- <div class="controller">
-    <button class="button up">↑</button>
-    <div class="horizontal-buttons">
-      <button class="button left">←</button>
-      <button class="button right">→</button>
-    </div>
-    <button class="button down">↓</button>
-  </div> -->
   <div class="set setbg white">
     <nav class="d-pad">
-      <a class="up" href="#"></a>
-      <a class="right" href="#"></a>
-      <a class="down" href="#"></a>
-      <a class="left" href="#"></a>
+      <a class="up" (click)="sendData('up')"></a>
+      <a class="right" (click)="sendData('right')"></a>
+      <a class="down" (click)="sendData('down')"></a>
+      <a class="left" (click)="sendData('left')"></a>
     </nav>
   </div>
   <div class="info-container">
